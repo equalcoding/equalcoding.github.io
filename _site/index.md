@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages TEST1
+## Welcome to GitHub Pages TEST2
 
 You can use the [editor on GitHub](https://github.com/equalcoding/equalcoding.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
