@@ -1,12 +1,18 @@
+:root {
+    --bg-colour: #72b3ce;
+    --footer-colour: #7481a2;
+    --bg-image: url("../img/bg.png");
+  }
+
 body  {
-    background-color: #304148;
+    background-color: var(--bg-colour);
 }
 
 .header-image {
-    background-image: url("../img/bg.png");
+    background-image: var(--bg-image);
     background-size: cover;
     border-radius: 0;
-    height:35vh;
+    height: auto;
     box-shadow: 0 8px 6px -6px black;
 }
 
@@ -15,7 +21,8 @@ body  {
 }
 
 .card-title {
-    padding: 0.5em ;
+    padding: 0.5em;
+    word-break: break-word;
 }
 
 .card-clickable {
@@ -25,6 +32,96 @@ body  {
 .card-clickable:hover {
     transition: 0.4s;
     cursor: pointer;
-    transform:scale(1.1);
+    transform:scale(1.05);
     box-shadow: 0 18px 26px -6px black;
 }
+
+.content-logo {
+    width: 96px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 36px;
+    
+}
+
+.content-title {
+    font-weight: 900;
+    font-size: 3em;
+    font-family: monospace;
+    color: white;
+    text-shadow: 1px 3px 5px #47859e;
+}
+
+ion-icon {
+    font-size: 2em;
+    margin-left: 24px;
+}
+
+.header-logo {
+    width: 64px;
+    margin-left: 24px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.gray-svg-filter {
+    filter: invert(11%) sepia(14%) saturate(217%) hue-rotate(155deg) brightness(98%) contrast(85%);
+}
+
+.clickable {
+    cursor: pointer;    
+    transition: 0.2s;
+}
+
+.clickable:hover {
+    transition: 0.2s;
+    transform: scale(1.25);
+}
+
+.bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.capitalise {
+    text-transform:capitalize;
+}
+
+.footer {
+    background-color: #68a1b9;
+    text-align: center;
+    padding: 2em 0 2em 0;
+    font-family: inherit;
+    font-size: 1.1em;
+    font-weight: 400;
+    font-style: italic;
+    box-shadow: 0px -4px 12px 0px #000000;
+    margin-top: 3em;
+}
+
+.hide {
+    display: none;
+}
+
+a:link { color:black; text-decoration: none; }
+a:visited { color:black; text-decoration: none; }
+a:hover { color:black; text-decoration: none; }
+a:active { color: black; text-decoration: none; }
+
+@media only screen and (max-width: 960px)  {
+    .header-buttons {
+        justify-content: center;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 540px)  {
+    .header-buttons {
+        justify-content: center;
+        font-size: 1em;
+    }
+}
+
+
