@@ -1,0 +1,30 @@
+body  {
+    background-color: #304148;
+}
+
+.header-image {
+    background-image: url("../img/bg.png");
+    background-size: cover;
+    border-radius: 0;
+    height:35vh;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.card-text {
+    padding: 0 1em 1em 1em;
+}
+
+.card-title {
+    padding: 0.5em ;
+}
+
+.card-clickable {
+    transition: 0.2s;
+}
+
+.card-clickable:hover {
+    transition: 0.4s;
+    cursor: pointer;
+    transform:scale(1.1);
+    box-shadow: 0 18px 26px -6px black;
+}

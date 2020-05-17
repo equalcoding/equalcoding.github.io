@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+        
+</head>
+
+<body>
+    <div class="jumbotron header-image"></div>
+    <div class="container">
+        <div id="blog" class="row">
+        </div>
+    </div>
+</body>
+
+<script>
+    function populateTargetElement(response) {
+        targetElement.innerHTML = `${targetElement.innerHTML}
+        <div class="col-lg-4 pb-4">
+        <div class="card card-clickable" onclick="window.open('${response.url.toString()}')">
+                ${response.cover_image != null ? `<img class="card-img-top img-fluid" src="${response.cover_image}" alt="Card image cap">` : ''}
+                <div class="card-body">
+                    <h5 class="card-title">${response.title}</h5>
+                    <p class="card-text">${response.description}</p>
+                    <p class="card-text"><small class="text-muted">${new Date(response.published_at).toLocaleDateString('en-Gb')}</small></p>
+                </div>
+        </div>
+        </div>`
+    }
+
+    var username = 'equalcoding';
+    var state = 'all';
+    var perPage = 3;
+    var page = 1;
+    var articles = [];
+    var targetElement = document.getElementById('blog');
+    var request = new XMLHttpRequest()
+    request.open('GET', `https://dev.to/api/articles?username=${username}&state=${state}&per_page=${perPage}&page=${page}`, true)
+
+    request.onload = function () {
+        response = JSON.parse(request.response);
+        response.forEach(response => populateTargetElement(response));
+    }
+    request.send();
+</script>
+
+</html>
