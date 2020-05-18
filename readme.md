@@ -3,6 +3,8 @@
 This is a small project I have done to host my portfolio and any blog articles written in dev.to in a minimalist way.
 Click here if you wish to set this up yourself. Follow installation guide below.
 
+Page can be accessed [here](https://equalcoding.github.io/)
+
 
 # Making changes
 Flexibility has been in mind when developing this, therefore,  there is a general configuration available in the `main.js` file where the user is able to change links to their social media and dev.to profile.
