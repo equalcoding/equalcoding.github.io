@@ -74,8 +74,7 @@ function populateGitDom(response, ele) {
 function loadGitRepos() {
     let ele = document.getElementById('github');
     let request = new XMLHttpRequest();
-    request.open('GET', `https://api.github.com/users/${gitUsername}/repos?sort=${githubSort}&direction=${githubDirection}`, true);
-    request.setRequestHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    request.open('GET', `https://api.github.com/users/${gitUsername}/repos?sort=${githubSort}&direction=${githubDirection}&time=${new Date()}`, true);
     request.onload = function () {
         response = JSON.parse(request.response);
         response.forEach((response, index) => {
@@ -90,8 +89,7 @@ function loadGitRepos() {
 function loadDevToArticles() {
     let ele = document.getElementById('blog');
     let request = new XMLHttpRequest()
-    request.open('GET', `https://dev.to/api/articles?username=${devtoUsername}&state=${state}&per_page=${perPage}&page=${page}`, true)
-    request.setRequestHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    request.open('GET', `https://dev.to/api/articles?username=${devtoUsername}&state=${state}&per_page=${perPage}&page=${page}&time=${new Date()}`, true)
     request.onload = function () {
         response = JSON.parse(request.response);
         response.forEach(response => populateBlogDOM(response, ele));
