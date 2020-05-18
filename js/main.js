@@ -17,12 +17,12 @@ let githubSort = 'updated'; //Can be one of created, updated, pushed, full_name.
 let githubDirection = 'desc'; //Can be asc desc
 
 //Urls for header links
-let githubUrl = 'https://github.com/equalcoding';
-let twitchUrl = 'https://www.twitch.tv/equalcoding';
-let twitterUrl = 'https://twitter.com/equalcoding';
+let githubUrl = 'https://bit.ly/3g7cfr1';
+let twitchUrl = 'https://bit.ly/3dVyNc1';
+let twitterUrl = 'https://bit.ly/2Tg5CJ5';
 let linkedInUrl = '';
-let youtubeUrl = 'https://www.youtube.com/channel/UCCMkneP4QwQgKqS61mPUDkg';
-let devtoUrl = 'https://dev.to/equalcoding';
+let youtubeUrl = 'https://bit.ly/2ZmxVsS';
+let devtoUrl = 'https://bit.ly/3g0vmTp';
 let emailAddress = 'info@equalcoding.dev';
 
 //Default email message
