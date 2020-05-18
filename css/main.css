@@ -1,6 +1,6 @@
 :root {
     --bg-colour: #72b3ce;
-    --footer-colour: #7481a2;
+    --footer-colour: #72b3ce;
     --bg-image: url("../img/bg.png");
   }
 
@@ -90,14 +90,13 @@ ion-icon {
 }
 
 .footer {
-    background-color: #68a1b9;
+    background-color: var(--footer-colour);
     text-align: center;
     padding: 2em 0 2em 0;
     font-family: inherit;
     font-size: 1.1em;
     font-weight: 400;
     font-style: italic;
-    box-shadow: 0px -4px 12px 0px #000000;
     margin-top: 3em;
 }
 
