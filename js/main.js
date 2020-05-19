@@ -73,13 +73,9 @@ function populateGitDom(response, ele) {
 */
 function loadGitRepos() {
     let ele = document.getElementById('github');
+
     let request = new XMLHttpRequest();
     request.open('GET', `https://api.github.com/users/${gitUsername}/repos?sort=${githubSort}&direction=${githubDirection}`, true)
-    request.setRequestHeader('cache-control', 'no-cache, must-revalidate, post-check=0, pre-check=0');
-    request.setRequestHeader('cache-control', 'max-age=0');
-    request.setRequestHeader('expires', '0');
-    request.setRequestHeader('expires', 'Tue, 01 Jan 1980 1:00:00 GMT');
-    request.setRequestHeader('pragma', 'no-cache');;
     request.onload = function () {
         response = JSON.parse(request.response);
         response.forEach((response, index) => {
@@ -91,7 +87,16 @@ function loadGitRepos() {
     request.send();
 }
 
+
 function loadDevToArticles() {
+    fetch(`https://dev.to/api/articles?username=${devtoUsername}&state=${state}&per_page=${perPage}&page=${page}`)
+    .then(response => {
+        console.log(response)
+        return response.json();
+    }).then(result => {
+        console.log("Fetch")
+        console.log(result)
+    })
     let ele = document.getElementById('blog');
     let request = new XMLHttpRequest()
     request.open('GET', `https://dev.to/api/articles?username=${devtoUsername}&state=${state}&per_page=${perPage}&page=${page}`)
